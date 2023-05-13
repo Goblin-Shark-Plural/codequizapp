@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
+import LandingPage from './LandingPage';
 
 const App = () => {
   return (
     <div>
-      <div>This was made from Scratch! Also hello world!</div>
-      <div>yooooooooooo</div>
+      <LandingPage />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
