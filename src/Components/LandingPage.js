@@ -7,11 +7,15 @@ import Questions from './Questions';
 const LandingPage = () => {
   //state to handle if user is logged iin
   const [login, setLogin] = useState(false);
-
   //state to handle questions
   const [questions, setQuestions] = useState({});
   //state to handle whether quiz is in currently in session or not
   const [quizState, setQuizState] = useState(false);
+
+  //a callback to handle the click event of GO button to decide whether or not to render the next page
+
+  //function to update loginState
+  const updateLogin = () => setLogin(true);
 
   const handleStartClick = async () => {
     const tempQuestions = [
@@ -53,7 +57,7 @@ const LandingPage = () => {
     // }
   };
   return (
-    <div>
+    <div id="landingPage">
       {/* <div>
       <UserLogin/>
       <Starter/>
@@ -61,7 +65,7 @@ const LandingPage = () => {
       <Congrats/>
       </div> */}
       <h1 id="title">CodeQuiz</h1>
-      <UserLogin />
+      <UserLogin login={login} updateLogin={updateLogin} />
       <Starter
         login={login}
         quizState={quizState}
