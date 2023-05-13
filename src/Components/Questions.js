@@ -20,22 +20,68 @@ const Questions = (props) => {
       answer: 'd',
     },
   ];
+  //state to track correct answers
+  const [correctCount, setCorrectCount] = useState(0);
   //state to loop through questions
   const [currentQIndex, setCurrentQIndex] = useState(0);
   //handle incrementing index
-  const handleNextQuestion = () => setCurrentQIndex(currentQIndex + 1);
+  const handleNextQuestion = () => {
+    if (currentQIndex < tempQuestions.length - 1) {
+      setCurrentQIndex(currentQIndex + 1);
+    } else {
+      //pass correctCount to result component
+      return;
+    }
+  };
+
   const currentQ = tempQuestions[currentQIndex];
-  console.log(currentQ);
+
+  //compare response to correct answer, increment correctCount if correct
+  const answerCheck = (selection) => {
+    if (selection === currentQ.answer) setCorrectCount(correctCount + 1);
+  };
   //if login is true AND quizState is true, return this component
   if (props.login && props.quizState) {
     return (
-      <div id="question">
-        <h2>{currentQ.question}</h2>
+      <div className="questionsDiv">
+        <h2 id="question">{currentQ.question}</h2>
         <ul className="options">
-          <button onClick={handleNextQuestion}>{currentQ.a}</button>
-          <button onClick={handleNextQuestion}>{currentQ.b}</button>
-          <button onClick={handleNextQuestion}>{currentQ.c}</button>
-          <button onClick={handleNextQuestion}>{currentQ.d}</button>
+          <button
+            className="button-43"
+            onClick={() => {
+              handleNextQuestion();
+              answerCheck('a');
+            }}
+          >
+            {currentQ.a}
+          </button>
+          <button
+            className="button-43"
+            onClick={() => {
+              handleNextQuestion();
+              answerCheck('b');
+            }}
+          >
+            {currentQ.b}
+          </button>
+          <button
+            className="button-43"
+            onClick={() => {
+              handleNextQuestion();
+              answerCheck('c');
+            }}
+          >
+            {currentQ.c}
+          </button>
+          <button
+            className="button-43"
+            onClick={() => {
+              handleNextQuestion();
+              answerCheck('d');
+            }}
+          >
+            {currentQ.d}
+          </button>
         </ul>
       </div>
     );
