@@ -1,0 +1,20 @@
+#landingPage {
+  margin: auto;
+  width: 80%;
+  background-color: blue;
+}
+
+.login {
+  width: 50%;
+  margin: auto;
+  background-color: rgb(191, 186, 193);
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+}
+
+#goButton {
+  width: 150px;
+}
