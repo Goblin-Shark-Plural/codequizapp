@@ -12,16 +12,16 @@ app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.get('/login', userController.createUser, (req, res) => {
-  console.log('res from session:', res.cookies);
-});
+// app.get('/login', userController.createUser, (req, res) => {
+//   console.log('res from session:', res.cookies);
+// });
 
-app.get('/questions', (req, res) => {
-  console.log('questions');
-});
+// app.get('/questions', (req, res) => {
+//   console.log('questions');
+// });
 
 console.log('server is running fast');
 
-app.listen(3000);
+// app.listen(3000);
 
 module.exports = app;
