@@ -2,47 +2,54 @@ import React from 'react';
 import { useState } from 'react';
 
 const Questions = (props) => {
-  const tempQuestions = [
-    {
-      question: 'What does the array method .push() do?',
-      a: 'Not this one',
-      b: 'Not this one',
-      c: 'This one',
-      d: 'Not this one',
-      answer: 'c',
-    },
-    {
-      question: 'What does the array method .pop() do?',
-      a: 'Not this one',
-      b: 'Not this one',
-      c: 'Not this one',
-      d: 'This one',
-      answer: 'd',
-    },
-  ];
+  //   const tempQuestions = [
+  //     {
+  //       question: 'What does the array method .push() do?',
+  //       a: 'Not this one',
+  //       b: 'Not this one',
+  //       c: 'This one',
+  //       d: 'Not this one',
+  //       answer: 'c',
+  //     },
+  //     {
+  //       question: 'What does the array method .pop() do?',
+  //       a: 'Not this one',
+  //       b: 'Not this one',
+  //       c: 'Not this one',
+  //       d: 'This one',
+  //       answer: 'd',
+  //     },
+  //   ];
   //handle displaying new question
+  console.log(props.questions);
   const handleNextQuestion = () => {
-    if (props.currentQIndex < tempQuestions.length - 1) {
+    if (props.currentQIndex < props.questions.length - 1) {
       props.handleCurrentQIndex();
     } else {
       props.handleQuestionsDone();
     }
   };
 
-  const currentQ = tempQuestions[props.currentQIndex];
+  const currentQ = props.questions[props.currentQIndex];
 
   //compare response to correct answer, increment correctCount if correct
   const answerCheck = (selection) => {
     if (selection === currentQ.answer) props.handleCorrectCount();
   };
   //if login is true AND quizState is true, return this component
-  if (props.login && props.quizState && !props.questionsDone) {
+
+  if (
+    props.login &&
+    props.questions.length > 0 &&
+    props.quizState &&
+    !props.questionsDone
+  ) {
     return (
-      <div className="questionsDiv">
-        <h2 id="question">{currentQ.question}</h2>
-        <ul className="options">
+      <div className='questionsDiv'>
+        <h2 id='question'>{currentQ.question}</h2>
+        <ul className='options'>
           <button
-            className="button-43"
+            className='button-43'
             onClick={() => {
               answerCheck('a');
               handleNextQuestion();
@@ -51,7 +58,7 @@ const Questions = (props) => {
             {currentQ.a}
           </button>
           <button
-            className="button-43"
+            className='button-43'
             onClick={() => {
               answerCheck('b');
               handleNextQuestion();
@@ -60,7 +67,7 @@ const Questions = (props) => {
             {currentQ.b}
           </button>
           <button
-            className="button-43"
+            className='button-43'
             onClick={() => {
               answerCheck('c');
               handleNextQuestion();
@@ -69,7 +76,7 @@ const Questions = (props) => {
             {currentQ.c}
           </button>
           <button
-            className="button-43"
+            className='button-43'
             onClick={() => {
               answerCheck('d');
               handleNextQuestion();

@@ -14,5 +14,21 @@
     "c": "undefined",
     "d": "null",
     "answer": "-1"
+  },
+  {
+    "question": "What does the array method .push() do?",
+    "a": "Not this one",
+    "b": "Not this one",
+    "c": "This one",
+    "d": "Not this one",
+    "answer": "c"
+  },
+  {
+    "question": "What does the array method .pop() do?",
+    "a": "Not this one",
+    "b": "Not this one",
+    "c": "Not this one",
+    "d": "This one",
+    "answer": "d"
   }
 ]

@@ -46,47 +46,29 @@ const LandingPage = () => {
   const updateLogin = () => setLogin(true);
 
   const handleStartClick = async () => {
-    const tempQuestions = [
-      {
-        question: 'What does the array method .push() do?',
-        a: 'Not this one',
-        b: 'Not this one',
-        c: 'This one',
-        d: 'Not this one',
-        answer: 'c',
-      },
-      {
-        question: 'What does the array method .pop() do?',
-        a: 'Not this one',
-        b: 'Not this one',
-        c: 'Not this one',
-        d: 'This one',
-        answer: 'd',
-      },
-    ];
-    setQuestions(tempQuestions);
     //update quizState to true
     setQuizState(!quizState);
     // send fetch request to retrieve questions from database
-    // try {
-    //   const response = await fetch('databaseUrl', {
-    //     method: 'GET',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //   });
-    //   if (!response.ok) {
-    //     throw new Error(`HTTP error! status: ${response.status}`);
-    //   }
-    //   const result = await response.json();
-    //   console.log(result);
-    // } catch (err) {
-    //   console.log('Error: ', err);
-    // }
+    try {
+      const response = await fetch('/questions', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      setQuestions(result);
+      console.log(result);
+    } catch (err) {
+      console.log('Error: ', err);
+    }
   };
   return (
-    <div id="landingPage">
-      <h1 id="title">CodeQuiz</h1>
+    <div id='landingPage'>
+      <h1 id='title'>CodeQuiz</h1>
       <UserLogin
         login={login}
         updateLogin={updateLogin}
