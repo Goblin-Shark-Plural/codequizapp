@@ -29,9 +29,11 @@ h1 {
 
 .login {
   margin: auto;
+  margin-top: 150px;
   width: 60%;
   padding: 1rem 1rem 2em 1rem;
   background-color: black;
+  opacity: 0.7;
   border: 2px solid #00ff41;
   border-radius: 20px;
   display: flex;
@@ -51,6 +53,12 @@ h1 {
   width: 150px;
 }
 
+#letsGo {
+  margin-top: 50px;;
+  width: 200px;
+  height:60px;
+  font-size: 30px;
+}
 
 #loginButton {
   font-size:20px;
@@ -92,13 +100,16 @@ input[type='text'] {
 }
 .congrats {
   margin: auto;
+  margin-top: 150px;
   width: 80%;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid #00ff41;
   background-color: black;
+  opacity: 0.7;
 }
 #congratsTitle {
   font-size:30px;
@@ -113,6 +124,7 @@ input[type='text'] {
 
 .starterDiv,
 .starterPrompt {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -130,6 +142,11 @@ input[type='text'] {
 }
 
 .questionsDiv {
+  margin:auto;
+  margin-top: 120px;
+  height: 800px;
+  background-color: rgb(16, 15, 15);
+  opacity: 0.7;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -143,10 +160,11 @@ input[type='text'] {
 .options {
   display: flex;
   flex-direction: column;
+  
 }
 
 .questionsDiv button {
-  width: 30vh;
+  width: 400px;
   margin: 14px;
 }
 
@@ -159,19 +177,18 @@ input[type='text'] {
   box-sizing: border-box;
   color: black;
   cursor: pointer;
-  font-family: 'Akzidenz Grotesk BQ Medium', -apple-system, BlinkMacSystemFont,
-    sans-serif;
   font-size: 20px;
   font-weight: bold;
   outline: none;
   outline: 0;
   padding: 10px 25px;
-  text-align: center;
+  text-align:start;
   transform: translateY(0);
   transition: transform 150ms, box-shadow 150ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
 }
 
 .button-43:hover {
