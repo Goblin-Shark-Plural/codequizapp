@@ -1,3 +1,19 @@
+const Question = require('../models/questionModel');
+const mongoose = require('mongoose');
+const MONGO_URI =
+  'mongodb+srv://goblinsharkcs:rNTQQxMTktYFkS9N@cluster0.omba2jg.mongodb.net/';
+
+mongoose
+  .connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: 'Questions',
+  })
+  .then(() => console.log('Connected to Mongo DB'))
+  .catch((err) => console.log(err));
+
+const questionsController = {};
+
 questionsController.shuffleQuestions = async (req, res, next) => {
   try {
     const arr = await Question.find({});
