@@ -2,7 +2,7 @@ import React from 'react';
 
 const Result = ({ correctCount, questions }) => {
   return (
-    <div>
+    <div className='result'>
       <h2>
         You have answered {correctCount}/{questions.length} correctly!
       </h2>
