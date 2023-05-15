@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import Result from './Result.jsx';
-const Congrats = ({ correctCount }) => {
-  //todo: pased in correctCount state, also needs questions' LENGTH and prop drill to Result component
-  return (
-    <div>
-      <h2>Congratulations! You Completed All the Tests!</h2>
-      <Result correctCount={correctCount} />
-      <button>Try Again</button>
-    </div>
-  );
+import Starter from './Starter.js';
+const Congrats = ({ questionsDone, correctCount, questions, redirect }) => {
+  if (questionsDone) {
+    return (
+      <div className="congrats">
+        <h2>Congratulations! You Completed All the Tests!</h2>
+        <Result correctCount={correctCount} questions={questions} />
+        <button className="button-43" onClick={redirect}>
+          Try Again
+        </button>
+      </div>
+    );
+  }
 };
 
 export default Congrats;

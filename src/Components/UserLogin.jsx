@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const UserLogin = ({ updateLogin }) => {
+const UserLogin = ({ updateLogin, login, quizState }) => {
   const handleLoginClick = (event) => {
     event.preventDefault();
     // console.log(username, input);
@@ -30,25 +30,28 @@ const UserLogin = ({ updateLogin }) => {
     updateLogin();
   };
 
-  return (
-    <div className="login">
-      <h2>User Login</h2>
+  if (!login && !quizState) {
+    return (
+      <div className="login">
+        <h2 id="userLoginH2">User Login</h2>
 
-      <div action="" className="inputField">
-        <div>
-          <label>User Name</label>
-          <input type="text" placeholder="username" id="usernameInput" />
+        <div action="" className="inputField">
+          <div id="userInput">
+            <label id="userLabel">User Name: </label>
+            <input type="text" placeholder="username" id="usernameInput" />
+          </div>
+
+          <div id="passwordInput">
+            <label id="passwordLabel">User Password:</label>
+            <input type="text" placeholder="password" id="passwordInput" />
+          </div>
         </div>
-
-        <div>
-          <label>User Password</label>
-          <input type="text" placeholder="password" id="passwordInput" />
-        </div>
-
-        <button onClick={handleLoginClick}>Login</button>
+        <button id="loginbutton" onClick={handleLoginClick}>
+          Login
+        </button>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default UserLogin;
