@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Result from './Result.jsx';
-import Starter from './Starter.js';
 const Congrats = ({ questionsDone, correctCount, questions, redirect }) => {
   if (questionsDone) {
     return (
