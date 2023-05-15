@@ -4,20 +4,48 @@ import { useState } from 'react';
 const Questions = (props) => {
   const tempQuestions = [
     {
-      question: 'What does the array method .push() do?',
-      a: 'Not this one',
-      b: 'Not this one',
-      c: 'This one',
-      d: 'Not this one',
-      answer: 'c',
+      question:
+        'Which operator returns true if the two compared values are not equal?',
+      a: '<>',
+      b: '~',
+      c: '==!',
+      d: '!==',
+      answer: '!==',
     },
     {
-      question: 'What does the array method .pop() do?',
-      a: 'Not this one',
-      b: 'Not this one',
-      c: 'Not this one',
-      d: 'This one',
-      answer: 'd',
+      question: 'How is a forEach statement different from a for statement?',
+      a: ' Only a for statement uses a callback function.',
+      b: 'A for statement is generic, but a forEach statement can be used only with an array.',
+      c: 'Only a forEach statement lets you specify your own iterator.',
+      d: 'A forEach statement is generic, but a for statement can be used only with an array.',
+      answer:
+        'A for statement is generic, but a forEach statement can be used only with an array.',
+    },
+    {
+      question:
+        'Which statement is the correct way to create a variable called rate and assign it the value 100?',
+      a: 'let rate = 100;',
+      b: 'let 100 = rate;',
+      c: '100 = let rate;',
+      d: 'rate = 100;',
+      answer: 'let rate = 100',
+    },
+    {
+      question: 'Which method converts JSON data to a JavaScript object?',
+      a: 'JSON.fromString()',
+      b: 'JSON.parse()',
+      c: 'JSON.toObject()',
+      d: 'JSON.stringify()',
+      answer: 'JSON.parse()',
+    },
+    {
+      question:
+        'Which property references the DOM object that dispatched an event?',
+      a: 'self',
+      b: 'object',
+      c: 'target',
+      d: 'source',
+      answer: 'target',
     },
   ];
   //handle displaying new question

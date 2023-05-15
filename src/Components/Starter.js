@@ -8,7 +8,8 @@ const Starter = (props) => {
       <div className="starterDiv">
         <div className="starterPrompt">
           <h2>Are you ready to test your coding skills?</h2>
-          <button
+          <button 
+            id='letsGo'
             className="button-43"
             onClick={() => props.handleStartClick()}
           >
