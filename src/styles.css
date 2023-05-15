@@ -30,46 +30,44 @@ h1 {
 .login {
   margin: auto;
   width: 60%;
-  margin: auto;
-  padding: 1rem;
+  padding: 1rem 1rem 2em 1rem;
   background-color: black;
   border: 2px solid #00ff41;
-  border-radius: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .inputField {
+  width: 60%;
+  height: 150px;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
-  align-items: space-between;
-}
-
-#userInput {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: space-around;
-}
-
-#passwordInput {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: space-between;
 }
 
 #goButton {
   width: 150px;
 }
 
+
 #loginButton {
-  margin: auto;
+  font-size:20px;
   width: 100px;
   background-color: #00ff41;
-  align-self: center;
-  height: 30px;
+  height: 40px;
+  border-radius: 12px;
+  font-weight:bold;
 }
-
+#createAccount {
+  font-size:20px;
+  width: 180px;
+  background-color: #00ff41;
+  height: 40px;
+  border-radius: 12px;
+  font-weight:bold;
+}
 #userLabel {
   font-size: 30px;
 }
@@ -77,8 +75,24 @@ h1 {
   font-size: 30px;
 }
 
+input[type='text'] {
+  background-color: rgb(129, 124, 124);
+  color: #04f340;
+  font-size: 20px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.userButtons {
+  width: 50%;
+  display:flex;
+  padding-top: 40px;
+  align-items: space-between;
+  justify-content: space-around;
+}
 .congrats {
   margin: auto;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,6 +100,16 @@ h1 {
   border: 1px solid #00ff41;
   background-color: black;
 }
+#congratsTitle {
+  font-size:30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .starterDiv,
 .starterPrompt {
@@ -94,6 +118,12 @@ h1 {
   /* justify-content: center; */
   align-items: center;
 }
+
+.starterPrompt, h2 {
+  font-size: 50px;
+}
+
+
 
 .starterDiv button {
   /* width: ; */
@@ -124,15 +154,15 @@ h1 {
 .button-43 {
   background-color: #00ff41;
   border: 1px solid #00ff41;
-  border-radius: 4px;
+  border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
   color: black;
   cursor: pointer;
   font-family: 'Akzidenz Grotesk BQ Medium', -apple-system, BlinkMacSystemFont,
     sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: bold;
   outline: none;
   outline: 0;
   padding: 10px 25px;
@@ -147,6 +177,11 @@ h1 {
 .button-43:hover {
   box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
   transform: translateY(-2px);
+}
+
+#tryAgainBtn {
+ color:black;
+ font-weight: bold;
 }
 
 @media (min-width: 768px) {
