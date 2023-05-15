@@ -27,7 +27,6 @@ const UserLogin = ({ updateLogin }) => {
     //   .catch((err) => {
     //     console.log(err);
     //   });
-    //!!update login state to true??
     updateLogin();
   };
 
