@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Which array method will add an element (el) to the beginning of an array?",
+    "a": "push(el)",
+    "b": "shift(el)",
+    "c": "pop(el)",
+    "d": "unshift(el)",
+    "answer": "unshift(e)"
+  },
+  {
+    "question": "What will array.findIndex() return when no elements pass the test",
+    "a": "0",
+    "b": "-1",
+    "c": "undefined",
+    "d": "null",
+    "answer": "-1"
+  }
+]
