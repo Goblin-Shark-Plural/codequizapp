@@ -20,28 +20,23 @@ const Questions = (props) => {
       answer: 'd',
     },
   ];
-  //state to track correct answers
-  const [correctCount, setCorrectCount] = useState(0);
-  //state to loop through questions
-  const [currentQIndex, setCurrentQIndex] = useState(0);
-  //handle incrementing index
+  //handle displaying new question
   const handleNextQuestion = () => {
-    if (currentQIndex < tempQuestions.length - 1) {
-      setCurrentQIndex(currentQIndex + 1);
+    if (props.currentQIndex < tempQuestions.length - 1) {
+      props.handleCurrentQIndex();
     } else {
-      //pass correctCount to result component
-      return;
+      props.handleQuestionsDone();
     }
   };
 
-  const currentQ = tempQuestions[currentQIndex];
+  const currentQ = tempQuestions[props.currentQIndex];
 
   //compare response to correct answer, increment correctCount if correct
   const answerCheck = (selection) => {
-    if (selection === currentQ.answer) setCorrectCount(correctCount + 1);
+    if (selection === currentQ.answer) props.handleCorrectCount();
   };
   //if login is true AND quizState is true, return this component
-  if (props.login && props.quizState) {
+  if (props.login && props.quizState && !props.questionsDone) {
     return (
       <div className="questionsDiv">
         <h2 id="question">{currentQ.question}</h2>
@@ -49,8 +44,8 @@ const Questions = (props) => {
           <button
             className="button-43"
             onClick={() => {
-              handleNextQuestion();
               answerCheck('a');
+              handleNextQuestion();
             }}
           >
             {currentQ.a}
@@ -58,8 +53,8 @@ const Questions = (props) => {
           <button
             className="button-43"
             onClick={() => {
-              handleNextQuestion();
               answerCheck('b');
+              handleNextQuestion();
             }}
           >
             {currentQ.b}
@@ -67,8 +62,8 @@ const Questions = (props) => {
           <button
             className="button-43"
             onClick={() => {
-              handleNextQuestion();
               answerCheck('c');
+              handleNextQuestion();
             }}
           >
             {currentQ.c}
@@ -76,8 +71,8 @@ const Questions = (props) => {
           <button
             className="button-43"
             onClick={() => {
-              handleNextQuestion();
               answerCheck('d');
+              handleNextQuestion();
             }}
           >
             {currentQ.d}

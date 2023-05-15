@@ -1,13 +1,18 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 import Result from './Result.jsx';
-const Congrats = () => {
-  return (
-    <div>
-      <h2>Congratulations! You Completed All the Tests!</h2>
-      <Result />
-      <button>Try Again</button>
-    </div>
-  )
-}
+import Starter from './Starter.js';
+const Congrats = ({ questionsDone, correctCount, questions, redirect }) => {
+  if (questionsDone) {
+    return (
+      <div className="congrats">
+        <h2>Congratulations! You Completed All the Tests!</h2>
+        <Result correctCount={correctCount} questions={questions} />
+        <button className="button-43" onClick={redirect}>
+          Try Again
+        </button>
+      </div>
+    );
+  }
+};
 
-export default Congrats
+export default Congrats;

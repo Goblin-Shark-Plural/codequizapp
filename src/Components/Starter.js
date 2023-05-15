@@ -6,7 +6,6 @@ const Starter = (props) => {
   if (props.login && !props.quizState) {
     return (
       <div className="starterDiv">
-        <h1 id="starterTitle">CodeQuiz</h1>
         <div className="starterPrompt">
           <h2>Are you ready to test your coding skills?</h2>
           <button
