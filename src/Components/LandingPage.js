@@ -46,75 +46,29 @@ const LandingPage = () => {
   const updateLogin = () => setLogin(true);
 
   const handleStartClick = async () => {
-    const tempQuestions = [
-      {
-        question:
-          'Which operator returns true if the two compared values are not equal?',
-        a: '<>',
-        b: '~',
-        c: '==!',
-        d: '!==',
-        answer: '!==',
-      },
-      {
-        question: 'How is a forEach statement different from a for statement?',
-        a: ' Only a for statement uses a callback function.',
-        b: 'A for statement is generic, but a forEach statement can be used only with an array.',
-        c: 'Only a forEach statement lets you specify your own iterator.',
-        d: 'A forEach statement is generic, but a for statement can be used only with an array.',
-        answer:
-          'A for statement is generic, but a forEach statement can be used only with an array.',
-      },
-      {
-        question:
-          'Which statement is the correct way to create a variable called rate and assign it the value 100?',
-        a: 'let rate = 100;',
-        b: 'let 100 = rate;',
-        c: '100 = let rate;',
-        d: 'rate = 100;',
-        answer: 'let rate = 100',
-      },
-      {
-        question: 'Which method converts JSON data to a JavaScript object?',
-        a: 'JSON.fromString()',
-        b: 'JSON.parse()',
-        c: 'JSON.toObject()',
-        d: 'JSON.stringify()',
-        answer: 'JSON.parse()',
-      },
-      {
-        question:
-          'Which property references the DOM object that dispatched an event?',
-        a: 'self',
-        b: 'object',
-        c: 'target',
-        d: 'source',
-        answer: 'target',
-      },
-    ];
-    setQuestions(tempQuestions);
     //update quizState to true
     setQuizState(!quizState);
     // send fetch request to retrieve questions from database
-    // try {
-    //   const response = await fetch('databaseUrl', {
-    //     method: 'GET',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //   });
-    //   if (!response.ok) {
-    //     throw new Error(`HTTP error! status: ${response.status}`);
-    //   }
-    //   const result = await response.json();
-    //   console.log(result);
-    // } catch (err) {
-    //   console.log('Error: ', err);
-    // }
+    try {
+      const response = await fetch('/questions', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      setQuestions(result);
+      console.log(result);
+    } catch (err) {
+      console.log('Error: ', err);
+    }
   };
   return (
-    <div id="landingPage">
-      <h1 id="title">CodeQuiz</h1>
+    <div id='landingPage'>
+      <h1 id='title'>CodeQuiz</h1>
       <UserLogin
         login={login}
         updateLogin={updateLogin}
